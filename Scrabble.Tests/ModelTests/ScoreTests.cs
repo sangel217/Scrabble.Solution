@@ -45,5 +45,20 @@ namespace Score.Tests
       CollectionAssert.AreEqual(resultExpected, newWord.ConvertString("hello"));
     }
 
+    [TestMethod]
+    public void AssignValue_AssignValueToOnePointLetters_Int()
+    {
+      Points newWord = new Points("a");
+      Assert.AreEqual(1, newWord.AssignValue());
+    }
+
+    [TestMethod]
+    public void AssignValue_AssignValueToTwoPointLetters_Int()
+    {
+      Points newWord = new Points("d");
+      char[] character = newWord.ToCharArray();
+      Assert.AreEqual(2, character.AssignValue());
+    }
+
   }
 }
